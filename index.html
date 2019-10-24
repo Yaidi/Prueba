@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+
+<head>
+	<title>Sexology Trivia</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+   <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+	<!--Pantalla de bienvenida-->
+  
+	<div id="PreInicio" style="display: block;">
+		<center>
+			<h1>SEXOLOGY</h1>
+			<div class="caja">
+				<p id="frase">Aprender sobre sexualidad nunca fue tan divertido</p>
+				<form id="formName">
+					<label for="name">Bienvenida/o</label>
+            <br/><br/>
+            <input type="text" name="name" id="name" placeholder="Ingresa tu nombre" required >
+            <br/><br/>
+            <button type="submit" name="getin" id="getin" onclick="startGetName()">Comenzar</button>
+        </form>
+      </div>
+    </div>
+      <!--Menú-->
+        <div id="Inicio" style="display: none;"><center class="caja2">
+            <p id="showName"></p>
+            <label for="buttons">¡Comienza a jugar!</label>
+            <br/><br/>
+            <div id="buttons">
+                <button type="button" name="btnOp1" id="btnOp1" onclick="toggleVisibility('Op1')">Sexo seguro</button>
+                <br><br>
+                <button type="button" name="btnOp2" id="btnOp2" onclick="toggleVisibility('Op2')">Cuerpo humano</button>
+                </center>
+            </div>
+        </div>
+      <!--Preguntas sexo seguro-->
+      
+        <div id="Op1" style="display: none" class="formatPreguntas">
+          <form class="caja3">
+            <p id="showName"></p>
+            <label for="op1lbl" >Sexo seguro</label>
+            <br/><br/>
+            <form id="qstFormA">
+                <label for="qst1" class="qformat">¿Cuál de los siguientes métodos te protege de las infecciones de transmisión sexual?</label>
+                <select id="qst1ASelect" required>
+                    <option value="A">Diafragma</option>
+                    <option value="B">Vasectomía</option>
+                    <option value="C">Condón</option>
+                    <option value="D">Anillo vaginal</option>
+                </select>
+                <br><br>
+                <label for="qst2A" class="qformat">¿Cuál o cuáles de los siguientes métodos es considerado como una opción anticonceptiva definitiva (no reversible)?</label>
+                <select id="qst2ASelect" required>
+                    <option value="A">Vasectomía</option>
+                    <option value="B">DIU</option>
+                    <option value="C">Salpingoclasia (ligadura de trompas)</option>
+                    <option value="D">Vasectomía y salpingoclasia</option>
+                </select>
+                <br><br>
+               <label for="qst3A" class="qformat">¿Qué metodos sirven para protegerse durante el sexo oral? </label>
+                <select id="qst3ASelect" required>
+                    <option value="A">Condón</option>
+                    <option value="B">Anillo vaginal</option>
+                    <option value="C">Campo de látex</option>
+                    <option value="D">Condón y campo de látex</option>
+                </select>
+                <br/><br/>
+            <button type="submit" name="finish2" id="finish2" onclick="endGame2();toggleVisibility('finishDiv')">Finalizar</button>
+            <button type="button" name="back" id="back" onclick="toggleVisibility('Inicio')">Volver</button>
+            </form>
+        </div>
+        <!--Preguntas cuerpo humano-->
+        
+        <div id="Op2" style="display: none;" class="formatPreguntas">
+          <form class="caja3">
+            <p id="showName"></p>
+            <label for="op2lbl" >Cuerpo humano</label>
+            <br><br>
+            <form id="qstForm">
+                <label for="qst1" class="qformat">¿Cómo se llama el órgano en donde ocurre la gestación?</label>
+                <select id="qst1Select" required>
+                    <option value="A">Vagina</option>
+                    <option value="B">Útero</option>
+                    <option value="C">Clítoris</option>
+                    <option value="D">Ovario</option>
+                </select>
+                <br><br>
+                <label for="qst2" class="qformat">¿Cuál es la parte del cuerpo masculino en la que se producen y almacenan los espermatozoides?</label>
+                <select id="qst2Select" required>
+                    <option value="A">Uretra</option>
+                    <option value="B">Conductos deferetes</option>
+                    <option value="C">Testículos</option>
+                    <option value="D">Prepucio</option>
+                </select>
+                <br/><br/>
+                <label for="qst3" class="qformat">¿Qué función tiene el clítoris?
+
+                </label>
+                <select id="qst3Select" required>
+                    <option value="A">Facilitar la fecundación del óvulo</option>
+                    <option value="B">Expulsar la orina</option>
+                    <option value="C">Generar una respuesta sexual placentera</option>
+                    <option value="D">Hincharse para impedir la penetración</option>
+                </select>
+                <br><br>
+                <button type="submit" name="finish" id="finish" onclick="endGame();toggleVisibility('finishDiv');">Finalizar</button>
+            </form>
+            <br/><br/>
+            <button type="button" name="back" id="back" onclick="toggleVisibility('Inicio')">Volver</button>
+        </div>
+
+        <div id="finishDiv" style="display: none;">
+                <p id="finishName"></p>
+                <label for="buttons">¿Te gustaria  volver a intentarlo?</label>
+                <br/><br/>
+                <div id="buttons">
+                    <button type="button" name="btnOp1" id="btnOp1" onclick="toggleVisibility('Op1')">Sexo seguro</button>
+                    <br><br>
+                    <button type="button" name="btnOp2" id="btnOp2" onclick="toggleVisibility('Op2')">Cuerpo humano</button>
+                </div>
+            </div>
+    
+    <script src="script.js"></script>
+    </body>
+</html>
